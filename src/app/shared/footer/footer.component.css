@@ -1,0 +1,13 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    color: darkgray;
+    text-align: center;
+}
+
+.footer p {
+    padding: 14px 16px;
+}
