@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { POKEMON } from '../../pkmn';
+import { Pokemon } from 'src/app/Pokemon';
+import { Title } from '@angular/platform-browser';
+import pkmnData from '../../../assets/pokedex.json';
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokedexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    this.titleService.setTitle("Pokédex");
+  }
 
   ngOnInit() {
+    console.log(pkmnData[0]);
+  }
+  pokemon = pkmnData;
+
+
+  filterView(begin: number, end: number) {
+    this.pokemon = []
+    for(let i = begin; i <= end; i++) {
+      this.pokemon.push(pkmnData[i]);
+    }
+  }
+
+  formatPokedexNumber(dexNo: number): string {
+    let temp = String(dexNo);
+    if(temp.length < 2) {
+      return '00' + temp;
+    } else if (temp.length == 2) {
+      return '0' + temp;
+    } else {
+      return temp;
+    }
   }
 
 }

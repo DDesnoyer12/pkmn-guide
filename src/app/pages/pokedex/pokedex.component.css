@@ -1,0 +1,169 @@
+body {
+    height: auto;
+}
+.pokedex {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 5%;
+  margin-bottom: 20%;
+  border-radius: 0.5rem;
+  border: 1px solid darkgray;
+}
+.pokemon {
+  padding: 10px 10px 10px 0px;
+  border-bottom: 1px solid darkgray;
+  background-color: whitesmoke;
+}
+.pokemon span {
+  vertical-align: middle;
+}
+img {
+  vertical-align: middle;
+  image-rendering: pixelated;
+}
+h1 {
+  font-size: 5em;
+  text-align: center;
+}
+.searchbar {
+  border: 1px solid darkgray;
+  border-radius: 0.5rem;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 5%;
+  padding: 10px;
+}
+.searchbar input {
+  margin-left: 1em;
+  width: 90%;
+}
+
+.info {
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.viewby {
+  margin-right: 30%;
+  margin-left: 30%;
+  text-align: center;
+}
+.viewby ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+  overflow: hidden;
+}
+.viewby ul li {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  float: left;
+}
+li:hover {
+  background-color: darkgray;
+}
+
+.name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.dexno {
+  color: darkgray;
+  font-family: Consolas, monaco, monospace;
+}
+
+.types {
+  display: flex;
+}
+
+/*
+The below stylings are the background color for each type.
+Reference: https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates
+*/
+
+.type {
+  padding: 5px;
+  margin: 5px 5px 5px 0px;
+  border-radius: 0.125rem;
+}
+
+/* Normal */
+.normal {
+  background-color: #a8a878;
+}
+/* Grass */
+.grass {
+  background-color: #78c850;
+}
+/* Water */
+.water {
+  background-color: #6890f0;
+}
+/* Fire */
+.fire {
+  background-color: #f08030;
+}
+/* Electric */
+.electric {
+  background-color: #f8d030;
+}
+/* Rock */
+.rock {
+  background-color: #b8a038;
+}
+/* Ground */
+.ground {
+  background-color: #e0c068;
+}
+/* Steel */
+.steel {
+  background-color: #b8b8d0;
+}
+/* Fighting */
+.fighting {
+  background-color: #c03028;
+}
+/* Ice */
+.ice {
+  background-color: #98d8d8;
+}
+/* Bug */
+.bug {
+  background-color: #a8b820;
+}
+/* Flying */
+.flying {
+  background-color: #a890f0;
+}
+/* Poison */
+.poison {
+  background-color: rgba(160, 64, 160, 0.726);
+}
+/* Psychic */
+.psychic {
+  background-color: #f85888;
+}
+/* Dark */
+.dark {
+  background-color: #645851c2;
+}
+/* Ghost */
+.ghost {
+  background-color: #a292bc;
+}
+/* Fairy */
+.fairy {
+  background-color: #ee99ac;
+}
+/* Dragon */
+.dragon {
+  background-color: #a27dfa;
+}

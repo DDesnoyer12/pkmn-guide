@@ -1,4 +1,6 @@
-
+body {
+    height: auto;
+}
 
 .title {
     margin-top: 0.25em;
