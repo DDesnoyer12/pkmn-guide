@@ -8,17 +8,23 @@ body {
     text-align: center;
     font-size: 5em;
 }
+.title h1 {
+    font-weight: 100;
+}
 
 .subtitle {
     margin-top: 1em;
     text-align: center;
+    font-weight: 100;
     
 }
 .subtitle h3 {
     font-size: 2em;
+    font-weight: 100;
 }
 .subtitle h2 {
     font-size: 3em;
+    font-weight: 100;
 }
 
 .section {

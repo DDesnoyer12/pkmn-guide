@@ -7,6 +7,7 @@ body {
 h1 {
     font-size: 3em;
     text-align: center;
+    font-weight: 100;
 }
 
 h2 {
@@ -14,11 +15,13 @@ h2 {
     text-align: center;
     margin-top: 1em;
     margin-bottom: .5em;
+    font-weight: 100;
 }
 
 h3 {
     font-size: 1.5em;
     text-align: center;
+    font-weight: 100;
 }
 
 .primaryType {
@@ -73,10 +76,11 @@ button:enabled:active {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
 }
 /* 
-    Background color stylings that match the type of each button when
-    the button is hovered over/clicked on.
+    Background color stylings that match the type of each 
+    button when the button is hovered over/clicked on.
 */
 .grass.selected, .grass:enabled:hover {
     background-color: #63bc5a;
@@ -158,19 +162,36 @@ button:enabled:active {
     display: inline-block;
     margin-left: 10%;
     width: 30%;
+    height: auto;
     text-align: center;
 }
 
 .dual-type-matchup {
     display: inline-block;
     text-align: center;
-    width: 20%;
+    height: auto;
+    width: 40%;
 }
-
+.matchup-container {
+    text-align: center;
+}
 .secondary-type-matchup {
     display: inline-block;
     margin-right: 10%;
     width: 30%;
+    height: auto;
+    text-align: center;
+}
+
+.type-icon {
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+.type-icon-container {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
     text-align: center;
 }
 

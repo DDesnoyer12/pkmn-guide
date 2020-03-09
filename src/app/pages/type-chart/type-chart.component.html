@@ -55,8 +55,10 @@
       </div>
     </div>
   </div>
+  <hr />
   <div class="matchup-container">
-    <div class="primary-type-matchup">
+    <!-- <div class="primary-type-matchup">
+      <div style="vertical-align: middle;"><img src="../../../assets/type-icons/{{ primaryType }}.png" /></div>
       <div *ngIf="doubleSuperEffective.length > 0">
         <p>4x damage from:</p>
         <div *ngFor="let type of doubleSuperEffective">
@@ -93,8 +95,140 @@
           <p>{{ type }}</p>
         </div>
       </div>
+    </div> -->
+    <div *ngIf="!secondaryType" class="dual-type-matchup">
+      <div>
+        <img src="../../../assets/type-icons/{{ primaryType }}.png" />
+      </div>
+      <div class="type-icon-container" *ngIf="doubleSuperEffective.length > 0">
+        <p>4x weak to:</p>
+        <div class="type-icon" *ngFor="let type of doubleSuperEffective">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="superEffective.length > 0">
+        <p>2x weak to:</p>
+        <div class="type-icon" *ngFor="let type of superEffective">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="normalDamage.length > 0">
+        <p>Neutral to:</p>
+        <div class="type-icon" *ngFor="let type of normalDamage">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="resist.length > 0">
+        <p>Resists:</p>
+        <div class="type-icon" *ngFor="let type of resist">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="doubleResist.length > 0">
+        <p>4x Resistant:</p>
+        <div class="type-icon" *ngFor="let type of doubleResist">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="immune.length > 0">
+        <p>Immune to:</p>
+        <div class="type-icon" *ngFor="let type of immune">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
     </div>
-    <div class="dual-type-matchup">
+    <div *ngIf="secondaryType" class="dual-type-matchup">
+      <div>
+        <img style="margin-right: 5%;" src="../../../assets/type-icons/{{ primaryType }}.png" />
+        <img style="margin-left: 5%:" src="../../../assets/type-icons/{{ secondaryType }}.png" />
+      </div>
+      <div class="type-icon-container" *ngIf="doubleSuperEffective.length > 0">
+        <p>4x weak to:</p>
+        <div class="type-icon" *ngFor="let type of doubleSuperEffective">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="superEffective.length > 0">
+        <p>2x weak to:</p>
+        <div class="type-icon" *ngFor="let type of superEffective">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="normalDamage.length > 0">
+        <p>Neutral to:</p>
+        <div class="type-icon" *ngFor="let type of normalDamage">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="resist.length > 0">
+        <p>Resists:</p>
+        <div class="type-icon" *ngFor="let type of resist">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="doubleResist.length > 0">
+        <p>4x Resistant:</p>
+        <div class="type-icon" *ngFor="let type of doubleResist">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+      <div class="type-icon-container" *ngIf="immune.length > 0">
+        <p>Immune to:</p>
+        <div class="type-icon"*ngFor="let type of immune">
+          <img
+            src="../../../assets/type-icons//{{ type }}.png"
+            width="100"
+            height="22"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- <div *ngIf="secondaryType" class="secondary-type-matchup">
+      <div><img src="../../../assets/type-icons/{{ secondaryType }}.png" /></div>
       <div *ngIf="doubleSuperEffective.length > 0">
         <p>4x damage from:</p>
         <div *ngFor="let type of doubleSuperEffective">
@@ -131,44 +265,6 @@
           <p>{{ type }}</p>
         </div>
       </div>
-    </div>
-    <div class="secondary-type-matchup">
-      <div *ngIf="doubleSuperEffective.length > 0">
-        <p>4x damage from:</p>
-        <div *ngFor="let type of doubleSuperEffective">
-          <p>{{ type }}</p>
-        </div>
-      </div>
-      <div *ngIf="superEffective.length > 0">
-        <p>2x damage from:</p>
-        <div *ngFor="let type of superEffective">
-          <p>{{ type }}</p>
-        </div>
-      </div>
-      <div *ngIf="normalDamage.length > 0">
-        <p>1x damage from:</p>
-        <div *ngFor="let type of normalDamage">
-          <p>{{ type }}</p>
-        </div>
-      </div>
-      <div *ngIf="resist.length > 0">
-        <p>0.5 from:</p>
-        <div *ngFor="let type of resist">
-          <p>{{ type }}</p>
-        </div>
-      </div>
-      <div *ngIf="doubleResist.length > 0">
-        <p>0.25 from:</p>
-        <div *ngFor="let type of doubleResist">
-          <p>{{ type }}</p>
-        </div>
-      </div>
-      <div *ngIf="immune.length > 0">
-        <p>no damage from:</p>
-        <div *ngFor="let type of immune">
-          <p>{{ type }}</p>
-        </div>
-      </div>
-    </div>
+    </div> -->
   </div>
 </body>
