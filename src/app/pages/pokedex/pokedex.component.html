@@ -2,33 +2,33 @@
   <h1>Pokédex</h1>
   <div class="searchbar">
     <i class="fas fa-search"></i>
-    <input type="text" placeholder="Search..." />
+    <input [(ngModel)]="search" (input)="searchPokemon()" type="text" placeholder="Search..." />
   </div>
   <div class="viewby">
     <ul>
-      <li (click)="filterView(0, 809)">All</li>
-      <li (click)="filterView(0, 150)">Gen 1</li>
-      <li (click)="filterView(151, 250)">Gen 2</li>
-      <li (click)="filterView(251, 385)">Gen 3</li>
-      <li (click)="filterView(386, 492)">Gen 4</li>
-      <li (click)="filterView(493, 648)">Gen 5</li>
-      <li (click)="filterView(649, 720)">Gen 6</li>
-      <li (click)="filterView(721, 808)">Gen 7</li>
-      <li (click)="filterView(1, 809)">Gen 8</li>
+      <li style="font-weight: bold;">Sort by:</li>
+      <li class="option" (click)="filterView(0, 809)">All</li>
+      <li class="option" (click)="filterView(0, 150)">Gen 1</li>
+      <li class="option" (click)="filterView(151, 250)">Gen 2</li>
+      <li class="option" (click)="filterView(251, 385)">Gen 3</li>
+      <li class="option" (click)="filterView(386, 492)">Gen 4</li>
+      <li class="option" (click)="filterView(493, 648)">Gen 5</li>
+      <li class="option" (click)="filterView(649, 720)">Gen 6</li>
+      <li class="option" (click)="filterView(721, 808)">Gen 7</li>
+      <li class="option" (click)="filterView(1, 809)">Gen 8</li>
     </ul>
-  </div>
+  </div> 
   <div class="pokedex">
     <div *ngFor="let pkmn of pokemon" class="pokemon">
-      <img src="../../../assets/hires/{{pkmn.id}}.png" width="256" height="256" />
+      <img class="sprite" src="../../../assets/sprites/{{pkmn.id}}.png" width="136" height="112" />
       <div class="info">
-        <span class="dexno">#{{formatPokedexNumber(pkmn.id)}} </span>
-        <span class="name">{{ pkmn.name['english'] }}</span>
+        <span class="name">{{ pkmn.name['english'] }}   </span>
+        <span class="dexno">#{{formatPokedexNumber(pkmn.id)}}</span>
         <div class="types">
-          <div class="type {{pkmn.type[0].toLowerCase()}}">{{pkmn.type[0]}}</div>
-          <div *ngIf="pkmn.type[1]" class="type {{pkmn.type[1].toLowerCase()}}">{{pkmn.type[1]}}</div>
+          <div class="type"><img class="typeicon" src="../../../assets/type-icons/{{pkmn.type[0].toLowerCase()}}.png" width="100" height="22"/></div>
+          <div class="type" *ngIf="pkmn.type[1]"><img class="typeicon" src="../../../assets/type-icons/{{pkmn.type[1].toLowerCase()}}.png" width="100" height="22"/></div>
         </div>
       </div>
     </div>
   </div>
-  <div style='clear:both'></div>
 </body>

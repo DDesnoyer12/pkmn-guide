@@ -18,7 +18,7 @@ export class PokedexComponent implements OnInit {
     console.log(pkmnData[0]);
   }
   pokemon = pkmnData;
-
+  search: string;
 
   filterView(begin: number, end: number) {
     this.pokemon = []
@@ -35,6 +35,15 @@ export class PokedexComponent implements OnInit {
       return '0' + temp;
     } else {
       return temp;
+    }
+  }
+
+  searchPokemon() {
+    this.pokemon = [];
+    for(let pkmn of pkmnData) {
+      if(pkmn.name['english'].toLowerCase().match(`${this.search.toLowerCase()}`)) {
+        this.pokemon.push(pkmn);
+      }
     }
   }
 
